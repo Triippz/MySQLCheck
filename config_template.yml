@@ -1,0 +1,38 @@
+server_type: 'master'
+
+mysql:
+  user:
+  password:
+  host: 'HOST-A'
+  host_secondary: 'HOST-B'
+  raise_on_warnings: True
+  jira: 3310
+  confluence: 3312
+  bitbucket: 3316
+  misc: 3314
+
+replication:
+  user:
+  password:
+
+instances:
+  - jira
+  - confluence
+  - misc
+  - bitbucket
+
+mysql_jira:
+  user: 'py_monitor'
+  password: 'CheckOnMe'
+  host: 'PHLAMTECDB-A'
+  port: 3310
+  databases:
+    - jiradb
+
+smtp_info:
+  host: smtp.place.com
+  port: 25
+  from: some_email@gmail.com
+
+distro_list:
+  - someemailhere@gmail.com
