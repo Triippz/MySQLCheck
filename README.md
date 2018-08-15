@@ -6,6 +6,8 @@ an email will be sent out to individuals on a distribution list.
 This project was developed for a specific system with 1-Master and 1-Slave, so you may need to tailor this to your specific
 needs. If you don't need to, then the only thing you should ever have to change is the config file. An example has been provided.
 
+This project was also designed to run as a "Windows Task", executed every 'n' number of minutes/seconds/hours/etc. on a Server
+running Windows Server 2016, with MySQL 5.7 and 8.0 installed. You may experience issues if you use this for earlier versions, as I have not designed nor tested this for anything older that what is annotated.
 
 The flow of this program is.
 
