@@ -1,38 +1,41 @@
+# What this config file is set for
 server_type: 'master'
 
 mysql:
   user:
   password:
+  #host = the MASTER
   host: 'HOST-A'
+  #host_secondary = the SLAVE
   host_secondary: 'HOST-B'
   raise_on_warnings: True
+  # Below are the server instances with their corresponding port, update these to what you have
   jira: 3310
   confluence: 3312
   bitbucket: 3316
   misc: 3314
 
+#This user should be different that the user in mysql section. And have specific
+#permissions for replication. You should already have this, if you set up replication
 replication:
   user:
   password:
 
+#This section should match exactly to the database instances in the 'mysql' section of this file.
 instances:
   - jira
   - confluence
   - misc
   - bitbucket
 
-mysql_jira:
-  user: 'py_monitor'
-  password: 'CheckOnMe'
-  host: 'PHLAMTECDB-A'
-  port: 3310
-  databases:
-    - jiradb
-
+# Connection information to an smtp server. We assume port 25.
+# If you need authentication, you may need to add a few lines in your code
+# and login details to this config
 smtp_info:
   host: smtp.place.com
   port: 25
   from: some_email@gmail.com
 
+# all the users whom you want to be notified via email.
 distro_list:
   - someemailhere@gmail.com
